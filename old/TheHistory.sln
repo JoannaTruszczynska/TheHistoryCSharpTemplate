@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codecool.TheHistory", "Codecool.TheHistory\Codecool.TheHistory.csproj", "{7CF6503A-02AB-4A5D-84F1-88C2D4B60CBE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codecool.TheHistory.UnitTests", "Codecool.TheHistory.UnitTests\Codecool.TheHistory.UnitTests.csproj", "{20AC4394-E565-47FD-8715-3152DBFEF37C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CF6503A-02AB-4A5D-84F1-88C2D4B60CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CF6503A-02AB-4A5D-84F1-88C2D4B60CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CF6503A-02AB-4A5D-84F1-88C2D4B60CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CF6503A-02AB-4A5D-84F1-88C2D4B60CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20AC4394-E565-47FD-8715-3152DBFEF37C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20AC4394-E565-47FD-8715-3152DBFEF37C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20AC4394-E565-47FD-8715-3152DBFEF37C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20AC4394-E565-47FD-8715-3152DBFEF37C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D50D4CE-5412-40BD-B7C5-DD28E37E3237}
+	EndGlobalSection
+EndGlobal
