@@ -24,7 +24,7 @@ The IT specialists at _The History Institute_ chose to keep the current
 state of history as a bunch of words. They knew about
 arrays, but also heard that there are multiple list implementations in Java
 to choose from with different performance characteristics. They piloted a
-research project to check the difference between String[], ArrayList<String>,
+research project to check the difference between string[], List<String>,
 and LinkedList<String>. Help them to implement all the necessary methods
 with the best possible performance!
 
