@@ -6,7 +6,10 @@ namespace Codecool.TheHistory
     {
         public static int Main()
         {
-            return 0;
+           TheHistoryArray test = new TheHistoryArray();
+           test.Add("some    new text");
+           test.Clear();
+           return 0;
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Threading.Channels;
 
 namespace Codecool.TheHistory
 {
@@ -22,8 +23,6 @@ namespace Codecool.TheHistory
         
         public override void Add(string text)
         {
-            // TODO: Check the ITheHistory interface for more information
-
             string textTemp = null;
             int index = 0;
             while (index < text.Length)
@@ -55,45 +54,11 @@ namespace Codecool.TheHistory
                 Console.WriteLine(VARIABLE);
             }
             
-
-
-          
-
-            //string[] split = text.Split(new char[] { ' ', '\n', '\t' });
-
-            //foreach (var word in split)
-            //{
-            //    if (word.Contains(' '))
-            //    {
-                    
-            //    }
-            //}
-            
-            
-            
-            //
-
-            //foreach (var VARIABLE in split)
-            //{
-            //    if (VARIABLE.Contains(' ') | VARIABLE.Contains('\n') | VARIABLE.Contains('\t'))
-            //    {
-            //        VARIABLE.Remove();
-            //    }
-            //}
-           
-            //_wordsArray = _wordsArray.Concat(split).ToArray();
-            //foreach (var VARIABLE in _wordsArray)
-            //{
-            //     Console.WriteLine(VARIABLE);
-            //}
-           
-            
         }
 
         public override void Clear()
         {
-            // TODO: Check the ITheHistory interface for more information
-            throw new NotImplementedException();
+           _wordsArray = Array.Empty<string>();
         }
 
         public override void RemoveWord(string wordToBeRemoved)
