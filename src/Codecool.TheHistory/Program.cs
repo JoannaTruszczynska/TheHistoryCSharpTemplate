@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices.WindowsRuntime;
+﻿using System;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Codecool.TheHistory
 {
@@ -6,9 +7,10 @@ namespace Codecool.TheHistory
     {
         public static int Main()
         {
-           TheHistoryArray test = new TheHistoryArray();
-           test.Add("some    new text");
-           test.Clear();
+           TheHistoryList test = new TheHistoryList();
+           test.Add("abc def ghi");
+           Console.WriteLine(test.Size.ToString());
+           //test.ReplaceOneWord("tekst", "slowo");
            return 0;
         }
     }

@@ -20,7 +20,7 @@ namespace Codecool.TheHistory
         /// </summary>
         public override IEnumerable<string> WordsList => _wordsArray;
 
-        public override int Size => _split.Length;
+        public override int Size => _wordsArray.Length;
         
         public override void Add(string text)
         {
@@ -48,11 +48,7 @@ namespace Codecool.TheHistory
             }
             _split = textTemp.Split(new char[] { ' ', '\n', '\t' });
             _wordsArray = _wordsArray.Concat(_split).ToArray();
-
-            foreach (var VARIABLE in _wordsArray)
-            {
-                Console.WriteLine(VARIABLE);
-            }
+           
         }
 
         public override void Clear()
@@ -69,12 +65,41 @@ namespace Codecool.TheHistory
         {
             // TODO: Check the ITheHistory interface for more information
             throw new NotImplementedException();
+            //int indexFromWords = 0;
+            //int index = 0;
+            //while (indexFromWords < fromWords.Length )
+            //{
+            //    while (index < _wordsArray.Length)
+            //    {
+            //        if (fromWords[indexFromWords] == _wordsArray[index])
+            //        {
+                        
+            //        }
+            //    }
+            //}
+            
+            
+            //for (int indexFromWords = 0; indexFromWords < fromWords.Length-1; indexFromWords++)
+            //{
+            //    for (int index = 0; index < _wordsArray.Length - 1; index++)
+            //    {
+            //        if (fromWords[indexFromWords] == _wordsArray[index])
+            //        {
+
+            //        }
+            //    }
+            //}
         }
 
         public override void ReplaceOneWord(string from, string to)
         {
-            // TODO: Check the ITheHistory interface for more information
-            throw new NotImplementedException();
+            for (int index = 0; index < _wordsArray.Length; index++)
+            {
+                if (_wordsArray[index] == from)
+                {
+                    _wordsArray[index] = to;
+                }
+            }
         }
     }
 }

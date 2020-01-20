@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Codecool.TheHistory
 {
@@ -15,18 +16,23 @@ namespace Codecool.TheHistory
         /// </summary>
         public override IEnumerable<string> WordsList => _wordsList;
         
-        public override int Size => throw new NotImplementedException();
+        public override int Size => _wordsList.Count;
 
         public override void Add(string text)
         {
-            // TODO: Check the ITheHistory interface for more information
-            throw new NotImplementedException();
+            string pattern = @"\s+";
+            List<string> newText = new List<string>(System.Text.RegularExpressions.Regex.Split(text, pattern));
+
+            foreach (var VARIABLE in newText)
+            {
+                _wordsList.Add(VARIABLE);
+            }
+            
         }
 
         public override void Clear()
         {
-            // TODO: Check the ITheHistory interface for more information
-            throw new NotImplementedException();
+            _wordsList = new List<string>();
         }
 
         public override void RemoveWord(string wordToBeRemoved)
