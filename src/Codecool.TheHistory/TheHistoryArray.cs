@@ -14,6 +14,7 @@ namespace Codecool.TheHistory
         private string[] _wordsArray = new string[0];
 
         private string[] _split;
+        private string[] arrayTemp;
         /// <summary>
         /// Don't change this either. It's needed for testing.
         /// </summary>
@@ -44,7 +45,6 @@ namespace Codecool.TheHistory
                     textTemp = textTemp + text[index];
                     index = index + next;
                 }
-                
             }
             _split = textTemp.Split(new char[] { ' ', '\n', '\t' });
             _wordsArray = _wordsArray.Concat(_split).ToArray();
@@ -53,7 +53,6 @@ namespace Codecool.TheHistory
             {
                 Console.WriteLine(VARIABLE);
             }
-            
         }
 
         public override void Clear()
@@ -63,8 +62,7 @@ namespace Codecool.TheHistory
 
         public override void RemoveWord(string wordToBeRemoved)
         {
-            // TODO: Check the ITheHistory interface for more information
-            throw new NotImplementedException();
+            _wordsArray = _wordsArray.Where(w => w != wordToBeRemoved).ToArray();
         }
 
         public override void ReplaceMoreWords(string[] fromWords, string[] toWords)
