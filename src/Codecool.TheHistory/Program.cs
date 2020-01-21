@@ -7,11 +7,11 @@ namespace Codecool.TheHistory
     {
         public static int Main()
         {
-           TheHistoryList test = new TheHistoryList();
+           TheHistoryLinkedList test = new TheHistoryLinkedList();
            test.Add("hello world hello hello world");
            Console.WriteLine(test.Size.ToString());
            //test.ReplaceOneWord("tekst", "slowo");
-           test.ReplaceOneWord("abc", "ABC");
+          // test.ReplaceOneWord("abc", "ABC");
            test.RemoveWord("hello");
            return 0;
         }
