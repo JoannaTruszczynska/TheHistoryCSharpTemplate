@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
+using System.Linq;
 
 namespace Codecool.TheHistory
 {
@@ -27,7 +29,6 @@ namespace Codecool.TheHistory
             {
                 _wordsList.Add(VARIABLE);
             }
-            
         }
 
         public override void Clear()
@@ -37,8 +38,21 @@ namespace Codecool.TheHistory
 
         public override void RemoveWord(string wordToBeRemoved)
         {
-            // TODO: Check the ITheHistory interface for more information
-            throw new NotImplementedException();
+            var removeList = new List<int>();
+            //_wordsList = new List<string>(_wordsList.Where(w => !w.Contains(wordToBeRemoved)));
+            for (int index = 0; index < _wordsList.Count; index++)
+            {
+                if (_wordsList[index] == wordToBeRemoved)
+                {
+                    removeList.Add(index);
+                }
+            }
+            
+            removeList.Reverse();
+            foreach (var i in removeList)
+            {
+                _wordsList.RemoveAt(i);
+            }
         }
 
         public override void ReplaceMoreWords(string[] fromWords, string[] toWords)
@@ -49,8 +63,22 @@ namespace Codecool.TheHistory
 
         public override void ReplaceOneWord(string from, string to)
         {
-            // TODO: Check the ITheHistory interface for more information
-            throw new NotImplementedException();
+            for (int index = 0; index < _wordsList.Count; index++)
+            {
+               if (_wordsList[index] == from)
+               {
+                   _wordsList[index] = to;
+               } 
+            }
+           
+
+            foreach (var item in _wordsList)
+            {
+               Console.WriteLine(item); 
+            }
+
+
+            
         }
     }
 }
