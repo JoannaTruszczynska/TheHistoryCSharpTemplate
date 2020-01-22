@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Enumeration;
 using System.Linq;
 
 namespace Codecool.TheHistory
@@ -28,6 +29,7 @@ namespace Codecool.TheHistory
             {
                 _wordsList.AddLast(VARIABLE);
             }
+
            
         }
 
@@ -38,29 +40,23 @@ namespace Codecool.TheHistory
 
         public override void RemoveWord(string wordToBeRemoved)
         {
-            var index = 0;
-            while (index == 0)
+            var counter = 0;
+            while (counter == 0)
             {
                 foreach (var i in _wordsList)
                 {
                     if (i == wordToBeRemoved)
                     {
                         _wordsList.Remove(i);
-                        index = 0;
+                        counter = 0;
                         break;
                     }
-
                     if (i == _wordsList.ElementAt(_wordsList.Count-1))
                     {
-                        index = 1;
+                        counter = 1;
                     }
                 }
-
-                
-
             }
-            
-            
         }
 
         public override void ReplaceMoreWords(string[] fromWords, string[] toWords)
@@ -71,8 +67,14 @@ namespace Codecool.TheHistory
 
         public override void ReplaceOneWord(string from, string to)
         {
-            // TODO: Check the ITheHistory interface for more information
-            throw new NotImplementedException();
+            LinkedListNode<string> find = _wordsList.Find(from);
+            while (find != null)
+            {
+                _wordsList.AddBefore(find, to);
+                _wordsList.Remove(find);
+
+                find = _wordsList.Find(from);
+            }
         }
     }
 }

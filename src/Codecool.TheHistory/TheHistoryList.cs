@@ -70,15 +70,6 @@ namespace Codecool.TheHistory
                    _wordsList[index] = to;
                } 
             }
-           
-
-            foreach (var item in _wordsList)
-            {
-               Console.WriteLine(item); 
-            }
-
-
-            
         }
     }
 }
